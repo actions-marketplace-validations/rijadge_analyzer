@@ -28,7 +28,7 @@ inputs:
     default: "GeneratedSpecification"
 
 outputs:
-  spec:
+  specPath:
     description:
       'The path where the OpenApi specification is saved.'
 runs:
