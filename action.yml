@@ -6,7 +6,7 @@ branding:
 inputs:
   directoryToSearch:
     description:
-      'The root directory to work from. Examples, "path/to/code".'
+      'The root directory to work from. Examples, "./path/to/code".'
     required: true
     
   openApiFormat:
