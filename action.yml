@@ -33,7 +33,7 @@ outputs:
       'The path where the OpenApi specification is saved.'
 runs:
   using: 'docker'
-  image: './NDiff/Dockerfile'
+  image: docker://rijadgerguri/ndiff:latest
   args:
   - '-s'
   - ${{ inputs.directoryToSearch }}
