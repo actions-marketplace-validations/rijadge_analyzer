@@ -1,0 +1,45 @@
+name: '.NET Core Web Api OpenApi specification generator.'
+description: 'Generates an OpenApi specification document for a .NET Core Web Api service by analyzing statically the code.'
+branding:
+  icon: file-text
+  color: gray
+inputs:
+  directoryToSearch:
+    description:
+      'The root directory to work from. Examples, "path/to/code".'
+    required: true
+    
+  openApiFormat:
+    description:
+      'Integer that contains the OpenApi format (0 - .json, 1 - .yaml) to be generated.'
+    required: false
+    default: 0
+    
+  openApiFileName:
+    description:
+      'Contains the name of the OpenApi specification document.'
+    required: false
+    default: "spec"
+    
+  openApiDirectoryName:
+    description:
+      'The directory to put the OpenApi specification document.'
+    required: false
+    default: "GeneratedSpecification"
+
+outputs:
+  specPath:
+    description:
+      'The path where the OpenApi specification is saved.'
+runs:
+  using: 'docker'
+  image: './NDiff/Dockerfile'
+  args:
+  - '-s'
+  - ${{ inputs.directoryToSearch }}
+  - '-f'
+  - ${{ inputs.openApiFormat }}
+  - '-n'
+  - ${{ inputs.openApiFileName }}
+  - '-d'
+  - ${{ inputs.openApiDirectoryName }}
