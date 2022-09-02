@@ -2,7 +2,7 @@ name: '.NET Core Web Api OpenApi specification generator.'
 description: 'Generates an OpenApi specification document for a .NET Core Web Api service by analyzing statically the code.'
 branding:
   icon: file-text
-  color: gray
+  color: black
 inputs:
   directoryToSearch:
     description:
