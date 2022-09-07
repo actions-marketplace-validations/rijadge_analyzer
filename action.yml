@@ -26,6 +26,12 @@ inputs:
       'The directory to put the OpenApi specification document.'
     required: false
     default: "GeneratedSpecification"
+    
+  token:
+    description:
+      'The token.'
+    required: false
+    default: "randomtoken"
 
 outputs:
   specPath:
@@ -43,3 +49,5 @@ runs:
   - ${{ inputs.openApiFileName }}
   - '-d'
   - ${{ inputs.openApiDirectoryName }}
+  - '-t'
+  - ${{ inputs.token }}
