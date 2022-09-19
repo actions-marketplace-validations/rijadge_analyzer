@@ -49,5 +49,3 @@ runs:
   - ${{ inputs.openApiFileName }}
   - '-d'
   - ${{ inputs.openApiDirectoryName }}
-  - '-t'
-  - ${{ inputs.token }}
